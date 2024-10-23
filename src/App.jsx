@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import Routing from "@/pages/route";
+import Routing from "@assets/pages/route";
 const App = () => {
   return (
     <div>

@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import LandingPage from "./LandingPage";
+import Authorization from "@/assets/pages/Authorization.jsx";
 const Routing = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LandingPage/>}/>
+        <Route path="/login" element={<Authorization />} />
       </Routes>
     </>
   );

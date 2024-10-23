@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "@/components/Header/Header";
+import Login from "@assets/components/Login/Login.jsx"
 const LandingPage = () => {
   return (
     <div>
-      <Header />
+      <Login/>
     </div>
   );
 };
