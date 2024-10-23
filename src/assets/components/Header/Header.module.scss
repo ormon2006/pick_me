@@ -1,3 +1,9 @@
-.Header{
-    
+.Header {
+  &__logo h2 {
+    color: black;
+
+    span {
+      color: rgb(133, 1, 1);
+    }
+  }
 }
