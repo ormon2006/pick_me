@@ -1,3 +1,30 @@
-.Header{
-    
+.Header {
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__nav ul,
+  li {
+    display: flex;
+    align-items: center;
+    column-gap: 21px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__logo h2 {
+    font-size: 38px;
+    -webkit-text-stroke: 0.1px #ffffff;
+    color: black;
+
+    span {
+      color: rgb(133, 1, 1);
+    }
+  }
+  &__text {
+    text-align: center;
+    padding: 71px 0 223px;
+  }
+
 }
