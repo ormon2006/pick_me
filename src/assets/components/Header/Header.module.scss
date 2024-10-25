@@ -1,9 +1,5 @@
 .Header {
-  background-image: url("../../image/background.jpg") !important;
-  background-image: url("/path/to/your/image.jpg"); // Путь к вашему изображению
-  background-size: cover; // Масштабирование изображения по всему элементу
-  background-position: center; // Центрирование изображения
-  background-repeat: no-repeat;
+
   &__flex {
     display: flex;
     align-items: center;

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "@assets/components/Login/Login.module.scss";
 import { Snackbar, TextField, Alert, Button } from "@mui/material";
-import user from "@assets/image/icon/user.svg";
-import mail from "@assets/image/icon/mail.svg";
-import password from "@assets/image/icon/password.svg";
+
+
+
 const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
