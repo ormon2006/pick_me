@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "@assets/components/Header/Header.module.scss";
+import { Button } from "@mui/material";
+
 const Header = () => {
   return (
-    <header>
+    <header className={styles.Header}>
       <div className="container">
         <div className={styles.Header__flex}>
           <div className={styles.Header__logo}>
@@ -28,6 +30,12 @@ const Header = () => {
               </ul>
             </nav>
           </div>
+        </div>
+        <div className={styles.Header__text}>
+          <h1 className={styles.Header__typing}>  
+            Твой план тренировок и <br /> питания — с умной <br /> поддержкой!
+          </h1>
+          <Button>готов начать</Button>
         </div>
       </div>
     </header>

@@ -10,8 +10,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
       "@assets": path.resolve(__dirname, "src/assets"),
       "@pages": path.resolve(__dirname, "src/assets/pages"),
-      
-      "@helpers": path.resolve(__dirname, "src/assets/helpers"), 
+
+      "@helpers": path.resolve(__dirname, "src/assets/helpers"),
     },
   },
 });

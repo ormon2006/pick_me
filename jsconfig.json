@@ -4,7 +4,8 @@
     "paths": {
       "@/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
-      "@pages/*": ["src/assets/pages/*"]
+      "@pages/*": ["src/assets/pages/*"],
+      "@helpers/*": ["src/assets/helpers/*"]
     }
   }
 }

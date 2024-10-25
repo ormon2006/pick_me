@@ -1,0 +1,31 @@
+.PersonalInfoForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content{
+    max-width: 800px;
+    h2{
+      color: #fff;
+      text-align: center;
+      padding: 10px 0 30px;
+    }
+  }
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 150px;
+
+  }
+  &__gender {
+    margin-top: 20px;
+  }
+  &__formControl {
+    color: #fff;
+    .MuiOutlinedInput-root {
+      &.Mui-focused fieldset {
+        border-color: #fff;
+      }
+    }
+  }
+}
