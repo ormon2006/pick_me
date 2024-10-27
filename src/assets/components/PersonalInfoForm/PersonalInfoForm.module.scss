@@ -2,12 +2,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &__content{
-    max-width: 800px;
-    h2{
+  flex-direction: column; // или row, если необходимо
+
+  &__progress{
+    width: 30%;
+    margin-top: 30px;
+  }
+  &__content {
+    max-width: 600px;
+    display: grid;
+    justify-content: center;
+    h2 {
       color: #fff;
       text-align: center;
       padding: 10px 0 30px;
+      font-size: 39px;
     }
   }
   &__number {
@@ -15,10 +24,10 @@
     align-items: center;
     justify-content: center;
     column-gap: 150px;
-
   }
   &__gender {
     margin-top: 20px;
+    
   }
   &__formControl {
     color: #fff;
@@ -28,4 +37,8 @@
       }
     }
   }
+  &__btn{
+    text-align: center;
+  }
 }
+

@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "@assets/components/Header/Header.module.scss";
 import { Button } from "@mui/material";
-import {Navigate, useNavigate} from "react-router-dom"
- const navigate = useNavigate
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/login");
+  };
   return (
     <header className={styles.Header}>
       <div className="container">
@@ -36,9 +40,7 @@ const Header = () => {
           <h1 className={styles.Header__typing}>
             Твой план тренировок и <br /> питания — с умной <br /> поддержкой!
           </h1>
-          <Link path="/login">
-            <Button>готов начать</Button>
-          </Link>
+          <Button onClick={handleNavigate}>готов начать</Button>
         </div>
       </div>
     </header>

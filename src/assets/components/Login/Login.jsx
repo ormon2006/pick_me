@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import styles from "@assets/components/Login/Login.module.scss";
 import { Snackbar, TextField, Alert, Button } from "@mui/material";
 
-
-
 const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -71,6 +69,7 @@ const Login = () => {
               </p>
               <div className={styles.Login__user}>
                 <TextField
+
                   style={{
                     margin: "8px 0",
                     width: "100%",
