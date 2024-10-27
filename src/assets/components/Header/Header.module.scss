@@ -1,5 +1,7 @@
 .Header {
-
+  &__container{
+    background: black;
+  }
   &__flex {
     display: flex;
     align-items: center;
@@ -22,9 +24,6 @@
       color: rgb(133, 1, 1);
     }
   }
-  &__text {
-    text-align: center;
-    padding: 71px 0 223px;
-  }
+
 
 }

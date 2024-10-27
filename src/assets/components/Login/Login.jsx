@@ -69,13 +69,12 @@ const Login = () => {
               </p>
               <div className={styles.Login__user}>
                 <TextField
-
                   style={{
                     margin: "8px 0",
                     width: "100%",
-                    borderRadius: "30px",
+                    borderRadius: "32px",
                   }}
-                  variant="standard"
+                  variant="outlined"
                   label="Имя"
                   value={name}
                   onChange={handleNameChange}
@@ -84,48 +83,10 @@ const Login = () => {
                   helperText={
                     nameError ? "Имя должно быть не менее 3 символов" : ""
                   }
-                  InputProps={{
-                    style: { color: "#FFF" },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#FFF" },
-                  }}
-                  sx={{
-                    "& .MuiInput-underline:before": {
-                      borderBottomColor: "#A0A0A0",
-                    },
-                    "& .MuiInput-underline:hover:before": {
-                      borderBottomColor: "#FFF",
-                    },
-                    "& .MuiInput-underline:after": {
-                      borderBottomColor: "#FFF",
-                    },
-                    "& .MuiFormLabel-root.Mui-focused": {
-                      color: "#FFF",
-                    },
-                  }}
-                />
-              </div>
-              <div className={styles.Login__mail}>
-                <TextField
-                  style={{
-                    margin: "8px 0",
-                    width: "100%",
-                    borderRadius: "30px",
-                  }}
-                  variant="outlined"
-                  label="Email"
-                  type="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  onBlur={handleEmailBlur}
-                  error={emailError}
-                  helperText={emailError ? "Введите корректный email" : ""}
-
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       "& fieldset": {
-                        borderColor: "#000", 
+                        borderColor: "#000",
                       },
                       "&:hover fieldset": {
                         borderColor: "#005B50",
@@ -135,7 +96,40 @@ const Login = () => {
                       },
                     },
                     "& .MuiFormLabel-root.Mui-focused": {
-                      color: "#000", 
+                      color: "#000",
+                    },
+                  }}
+                />
+              </div>
+              <div className={styles.Login__mail}>
+                <TextField
+                  style={{
+                    margin: "8px 0",
+                    width: "100%",
+                    borderRadius: "32px",
+                  }}
+                  variant="outlined"
+                  label="Email"
+                  type="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  onBlur={handleEmailBlur}
+                  error={emailError}
+                  helperText={emailError ? "Введите корректный email" : ""}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "#000",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "#005B50",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#005B50",
+                      },
+                    },
+                    "& .MuiFormLabel-root.Mui-focused": {
+                      color: "#000",
                     },
                   }}
                 />
@@ -145,9 +139,9 @@ const Login = () => {
                 style={{
                   margin: "8px 0",
                   width: "100%",
-                  borderRadius: "30px",
+                  borderRadius: "32px",
                 }}
-                variant="standard"
+                variant="outlined"
                 label="Пароль"
                 type="password"
                 value={password}
@@ -157,24 +151,20 @@ const Login = () => {
                 helperText={
                   passwordError ? "Пароль должен быть не менее 6 символов" : ""
                 }
-                InputProps={{
-                  style: { color: "#FFF" },
-                }}
-                InputLabelProps={{
-                  style: { color: "#FFF" },
-                }}
                 sx={{
-                  "& .MuiInput-underline:before": {
-                    borderBottomColor: "#A0A0A0",
-                  },
-                  "& .MuiInput-underline:hover:before": {
-                    borderBottomColor: "#FFF",
-                  },
-                  "& .MuiInput-underline:after": {
-                    borderBottomColor: "#FFF",
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      borderColor: "#000",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#005B50",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#005B50",
+                    },
                   },
                   "& .MuiFormLabel-root.Mui-focused": {
-                    color: "#FFF",
+                    color: "#000",
                   },
                 }}
               />
