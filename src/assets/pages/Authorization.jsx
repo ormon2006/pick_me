@@ -2,7 +2,7 @@ import React from "react";
 import Login from "@assets/components/Login/Login.jsx"
 const LandingPage = () => {
   return (
-    <div>
+    <div  >
       <Login/>
     </div>
   );

@@ -1,11 +1,15 @@
 .Login {
   padding: 0 20px 20px;
+  color: #1F1F1F;
   &__content {
-    border-radius: 32px;
     max-width: 568px;
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 14px 28px rgba(6, 4, 4, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
     padding: 48px;
     margin: auto;
+
     margin-top: 90px;
     @media screen and (max-width: 700px) {
       margin-top: 50px;
@@ -23,15 +27,17 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
-    color: #fff;
+    color: rgb(102, 102, 102);
     font-family: Graphik, sans-serif;
   }
   &__h2 {
-    font-size: 5.5rem;
-    font-weight: 100;
-    color: #fff;
+    margin: 0;
+    font-size: 33px;
+    line-height: 32px;
     text-align: center;
-    width: 100%;
+    font-family: Graphik, sans-serif;
+    font-weight: 600;
+
   }
   &__field {
     display: flex;
@@ -50,4 +56,5 @@
   background: #fff;
   height: 100%;
   text-align: center;
+  
 }

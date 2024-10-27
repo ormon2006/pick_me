@@ -113,7 +113,7 @@ const Login = () => {
                     width: "100%",
                     borderRadius: "30px",
                   }}
-                  variant="standard"
+                  variant="outlined"
                   label="Email"
                   type="email"
                   value={email}
@@ -121,24 +121,21 @@ const Login = () => {
                   onBlur={handleEmailBlur}
                   error={emailError}
                   helperText={emailError ? "Введите корректный email" : ""}
-                  InputProps={{
-                    style: { color: "#FFF" },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#FFF" },
-                  }}
+
                   sx={{
-                    "& .MuiInput-underline:before": {
-                      borderBottomColor: "#A0A0A0",
-                    },
-                    "& .MuiInput-underline:hover:before": {
-                      borderBottomColor: "#FFF",
-                    },
-                    "& .MuiInput-underline:after": {
-                      borderBottomColor: "#FFF",
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "#000", 
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "#005B50",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#005B50",
+                      },
                     },
                     "& .MuiFormLabel-root.Mui-focused": {
-                      color: "#FFF",
+                      color: "#000", 
                     },
                   }}
                 />
@@ -186,7 +183,7 @@ const Login = () => {
                 type="submit"
                 variant="outlined"
                 sx={{
-                  background: "linear-gradient(45deg, #3A8DFF, #32C1CD)",
+                  background: "green",
                   borderRadius: "20px",
                   marginTop: "32px",
                   color: "#FFF",

@@ -11,6 +11,12 @@ import maintain from "@assets/image/TrainingIntensityCard/maintain.avif";
 import styles from "@assets/components/TrainingIntensityCard/TrainingIntensityCard.module.scss";
 
 export default function TrainingIntensityCard() {
+  const [selectedGoal, setSelectedGoal] = React.useState(null);
+
+  const handleSelectGoal = (goal) => {
+    setSelectedGoal(goal);
+  };
+
   return (
     <div className={styles.TrainingIntensityCard}>
       <div className="container">
@@ -21,18 +27,20 @@ export default function TrainingIntensityCard() {
               sx={{
                 maxWidth: 345,
                 borderRadius: "17px",
-                padding: "10px 10px ",
+                padding: "10px 10px",
+                border: selectedGoal === "lose" ? "2px solid #4CAF50" : "none", // Фокус на выбранной карточке
+                boxShadow: selectedGoal === "lose" ? "0px 0px 10px rgba(76, 175, 80, 0.5)" : "none",
               }}
             >
               <Typography gutterBottom variant="h5" component="div">
                 Похудеть
               </Typography>
-              <CardActionArea>
+              <CardActionArea onClick={() => handleSelectGoal("lose")}>
                 <CardMedia
                   component="img"
                   height="240"
                   image={lose}
-                  alt="green iguana"
+                  alt="Похудеть"
                   style={{ objectFit: "cover" }}
                 />
                 <CardContent>
@@ -40,33 +48,39 @@ export default function TrainingIntensityCard() {
                     variant="body2"
                     sx={{ color: "text.secondary", fontSize: "16px" }}
                   >
-                    Программа для тех, кто хочет снизить вес и повысить свою
-                    выносливость.
+                    Программа для тех, кто хочет снизить вес и повысить свою выносливость.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button
+                  size="small"
+                  color="primary"
+                  onClick={() => handleSelectGoal("lose")}
+                >
                   Выбрать
                 </Button>
               </CardActions>
             </Card>
+
             <Card
               sx={{
                 maxWidth: 345,
                 borderRadius: "17px",
-                padding: "10px 10px ",
+                padding: "10px 10px",
+                border: selectedGoal === "gain" ? "2px solid #4CAF50" : "none", // Фокус на выбранной карточке
+                boxShadow: selectedGoal === "gain" ? "0px 0px 10px rgba(76, 175, 80, 0.5)" : "none",
               }}
             >
               <Typography gutterBottom variant="h5" component="div">
                 Массанабор
               </Typography>
-              <CardActionArea>
+              <CardActionArea onClick={() => handleSelectGoal("gain")}>
                 <CardMedia
                   component="img"
                   height="240"
                   image={maintain}
-                  alt="green iguana"
+                  alt="Массанабор"
                   style={{ objectFit: "cover" }}
                 />
                 <CardContent>
@@ -74,13 +88,16 @@ export default function TrainingIntensityCard() {
                     variant="body2"
                     sx={{ color: "text.secondary", fontSize: "16px" }}
                   >
-                    Станьте сильнее: комплекс упражнений и питание для роста
-                    мышц.
+                    Станьте сильнее: комплекс упражнений и питание для роста мышц.
                   </Typography>
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
+                <Button
+                  size="small"
+                  color="primary"
+                  onClick={() => handleSelectGoal("gain")}
+                >
                   Выбрать
                 </Button>
               </CardActions>

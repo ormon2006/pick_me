@@ -123,7 +123,6 @@ const PersonalInfoForm = ({ onNext, onProgressChange }) => {
                     sx={{
                       color: "#FFF",
                       "&.Mui-focused": { color: "#FFF" },
-                      "&:hover": { color: "#FFF" }, 
                     }}
                   >
                     Гендер
@@ -140,8 +139,14 @@ const PersonalInfoForm = ({ onNext, onProgressChange }) => {
                       "& .MuiSelect-icon": {
                         color: "#FFF",
                       },
-                      "&:hover .MuiOutlinedInput-notchedOutline": {
-                        borderColor: "#FFF", 
+                      "& .MuiInputBase-root:before": {
+                        borderBottomColor: "#FFF", 
+                      },
+                      "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
+                        borderBottomColor: "#FFF",
+                      },
+                      "& .MuiInputBase-root:after": {
+                        borderBottomColor: "#FFF", 
                       },
                     }}
                   >
