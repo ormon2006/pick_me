@@ -1,5 +1,4 @@
 .Header {
-
   &__flex {
     display: flex;
     align-items: center;
@@ -16,11 +15,11 @@
   &__logo h2 {
     font-size: 38px;
     -webkit-text-stroke: 0.1px #ffffff;
-    color: black;
+    // color: black;
 
-    span {
-      color: rgb(133, 1, 1);
-    }
+    // span {
+    //   color: rgb(133, 1, 1);
+    // }
   }
   &__text {
     text-align: center;
@@ -28,3 +27,4 @@
   }
 
 }
+
