@@ -28,12 +28,15 @@ export default function TrainingIntensityCard() {
                 maxWidth: 345,
                 borderRadius: "17px",
                 padding: "10px 10px",
-                border: selectedGoal === "lose" ? "2px solid #4CAF50" : "none", // Фокус на выбранной карточке
-                boxShadow: selectedGoal === "lose" ? "0px 0px 10px rgba(76, 175, 80, 0.5)" : "none",
+                border: selectedGoal === "lose" ? "2px solid #4CAF50" : "none",
+                boxShadow:
+                  selectedGoal === "lose"
+                    ? "0px 0px 10px rgba(76, 175, 80, 0.5)"
+                    : "none",
               }}
             >
               <Typography gutterBottom variant="h5" component="div">
-                Похудеть
+                2
               </Typography>
               <CardActionArea onClick={() => handleSelectGoal("lose")}>
                 <CardMedia
@@ -48,7 +51,7 @@ export default function TrainingIntensityCard() {
                     variant="body2"
                     sx={{ color: "text.secondary", fontSize: "16px" }}
                   >
-                    Программа для тех, кто хочет снизить вес и повысить свою выносливость.
+                    Подберем оптимальные тренировки для двух дней
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -69,11 +72,14 @@ export default function TrainingIntensityCard() {
                 borderRadius: "17px",
                 padding: "10px 10px",
                 border: selectedGoal === "gain" ? "2px solid #4CAF50" : "none", // Фокус на выбранной карточке
-                boxShadow: selectedGoal === "gain" ? "0px 0px 10px rgba(76, 175, 80, 0.5)" : "none",
+                boxShadow:
+                  selectedGoal === "gain"
+                    ? "0px 0px 10px rgba(76, 175, 80, 0.5)"
+                    : "none",
               }}
             >
               <Typography gutterBottom variant="h5" component="div">
-                Массанабор
+                3
               </Typography>
               <CardActionArea onClick={() => handleSelectGoal("gain")}>
                 <CardMedia
@@ -88,7 +94,7 @@ export default function TrainingIntensityCard() {
                     variant="body2"
                     sx={{ color: "text.secondary", fontSize: "16px" }}
                   >
-                    Станьте сильнее: комплекс упражнений и питание для роста мышц.
+                    Подберем оптимальные тренировки для трех дней
                   </Typography>
                 </CardContent>
               </CardActionArea>
