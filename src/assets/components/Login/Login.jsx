@@ -173,7 +173,7 @@ const Login = () => {
                 type="submit"
                 variant="outlined"
                 sx={{
-                  background: "green",
+                  background: "#616161",
                   borderRadius: "20px",
                   marginTop: "32px",
                   color: "#FFF",
@@ -182,7 +182,6 @@ const Login = () => {
                   fontWeight: "bold",
                   fontSize: "16px",
                   "&:hover": {
-                    background: "linear-gradient(45deg, #32C1CD, #3A8DFF)",
                     boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
                   },
                   "&:disabled": {
