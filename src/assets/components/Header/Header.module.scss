@@ -1,4 +1,12 @@
 .Header {
+  &__container{
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    background: #6F635B;
+    padding: 10px 0px 10px 10px;
+    margin: 0;
+  }
   &__flex {
     display: flex;
     align-items: center;
@@ -8,23 +16,20 @@
   li {
     display: flex;
     align-items: center;
-    column-gap: 21px;
+    column-gap: 40px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 1200;
+    
   }
   &__logo h2 {
     font-size: 38px;
-    -webkit-text-stroke: 0.1px #ffffff;
-    // color: black;
+    color: #000000;
 
-    // span {
-    //   color: rgb(133, 1, 1);
-    // }
+    span {
+      color: rgb(207, 207, 207);
+    }
   }
-  &__text {
-    text-align: center;
-    padding: 71px 0 223px;
-  }
+
 
 }
 
