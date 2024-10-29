@@ -9,20 +9,47 @@ import {
 } from "@mui/material";
 import styles from "@assets/components/PersonalInfoForm/PersonalInfoForm.module.scss";
 
-const PersonalInfoForm = ({ onNext, onProgressChange }) => {
+const PersonalInfoForm = ({ onNext, onProgressChange, onUserDataChange }) => {
   const [age, setAge] = useState("");
   const [weight, setWeight] = useState("");
   const [height, setHeight] = useState("");
   const [gender, setGender] = useState("");
-
   const fields = [age, weight, height, gender];
   const isFormComplete = fields.every(Boolean);
+
+  const handleGenderChange = (e) => {
+    setGender(e.target.value);
+    onUserDataChange({ gender: e.target.value }); // обновление gender
+  };
+
+  const handleWeightChange = (e) => {
+    setWeight(e.target.value);
+    onUserDataChange({ weight: e.target.value }); // обновление weight
+  };
+
+  const handleHeightChange = (e) => {
+    setHeight(e.target.value);
+    onUserDataChange({ height: e.target.value }); // обновление height
+  };
+
+  const handleAgeChange = (e) => {
+    setAge(e.target.value);
+    onUserDataChange({ age: e.target.value }); // обновление age
+  };
 
   useEffect(() => {
     const filledFieldsCount = fields.filter(Boolean).length;
     const progressPercentage = (filledFieldsCount / fields.length) * 100;
-    onProgressChange(progressPercentage); // Обновляем прогресс при изменении полей
+    onProgressChange(progressPercentage);
   }, [age, weight, height, gender, onProgressChange]);
+
+  const handleNext = () => {
+    if (isFormComplete) {
+      onNext(); // Вызываем onNext без передачи данных, данные уже обновлены
+    } else {
+      alert("Пожалуйста, заполните все поля.");
+    }
+  };
 
   return (
     <div className={styles.PersonalInfoForm}>
@@ -34,156 +61,124 @@ const PersonalInfoForm = ({ onNext, onProgressChange }) => {
               <div className={styles.PersonalInfoForm__number}>
                 <TextField
                   label="Возраст"
-                  variant="standard"
                   value={age}
-                  onChange={(e) => setAge(e.target.value)}
+                  onChange={handleAgeChange}
                   fullWidth
                   type="number"
-                  InputProps={{
-                    style: { color: "#FFF" },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#FFF" },
-                  }}
+                  variant="outlined"
                   sx={{
-                    "& .MuiInput-underline:before": {
-                      borderBottomColor: "#A0A0A0",
-                    },
-                    "& .MuiInput-underline:hover:before": {
-                      borderBottomColor: "#FFF",
-                    },
-                    "& .MuiInput-underline:after": {
-                      borderBottomColor: "#FFF",
+                    margin: "8px 0",
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "#000",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "#005B50",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#005B50",
+                      },
                     },
                     "& .MuiFormLabel-root.Mui-focused": {
-                      color: "#FFF",
+                      color: "#000",
                     },
                   }}
                 />
                 <TextField
                   label="Вес (кг)"
-                  variant="standard"
                   value={weight}
-                  onChange={(e) => setWeight(e.target.value)}
+                  onChange={handleWeightChange}
                   fullWidth
                   type="number"
-                  InputProps={{
-                    style: { color: "#FFF" },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#FFF" },
-                  }}
+                  variant="outlined"
                   sx={{
-                    "& .MuiInput-underline:before": {
-                      borderBottomColor: "#A0A0A0",
-                    },
-                    "& .MuiInput-underline:hover:before": {
-                      borderBottomColor: "#FFF",
-                    },
-                    "& .MuiInput-underline:after": {
-                      borderBottomColor: "#FFF",
+                    margin: "8px 0",
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "#000",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "#005B50",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#005B50",
+                      },
                     },
                     "& .MuiFormLabel-root.Mui-focused": {
-                      color: "#FFF",
+                      color: "#000",
                     },
                   }}
                 />
                 <TextField
                   label="Рост (см)"
-                  variant="standard"
                   value={height}
-                  onChange={(e) => setHeight(e.target.value)}
+                  onChange={handleHeightChange}
                   fullWidth
                   type="number"
-                  InputProps={{
-                    style: { color: "#FFF" },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#FFF" },
-                  }}
+                  variant="outlined"
                   sx={{
-                    "& .MuiInput-underline:before": {
-                      borderBottomColor: "#A0A0A0",
-                    },
-                    "& .MuiInput-underline:hover:before": {
-                      borderBottomColor: "#FFF",
-                    },
-                    "& .MuiInput-underline:after": {
-                      borderBottomColor: "#FFF",
+                    margin: "8px 0",
+                    "& .MuiOutlinedInput-root": {
+                      "& fieldset": {
+                        borderColor: "#000",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "#005B50",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "#005B50",
+                      },
                     },
                     "& .MuiFormLabel-root.Mui-focused": {
-                      color: "#FFF",
+                      color: "#000",
                     },
                   }}
                 />
               </div>
               <div className={styles.PersonalInfoForm__gender}>
-                <FormControl variant="standard" fullWidth>
-                  <InputLabel
-                    sx={{
-                      color: "#FFF",
-                      "&.Mui-focused": { color: "#FFF" },
-                    }}
-                  >
+                <FormControl variant="outlined" fullWidth>
+                  <InputLabel sx={{ "&.Mui-focused": { color: "#000" } }}>
                     Гендер
                   </InputLabel>
                   <Select
                     value={gender}
-                    onChange={(e) => setGender(e.target.value)}
+                    onChange={handleGenderChange}
                     label="Гендер"
                     sx={{
-                      color: "#FFF",
-                      "& .MuiSvgIcon-root": {
-                        color: "#FFF",
-                      },
-                      "& .MuiSelect-icon": {
-                        color: "#FFF",
-                      },
-                      "& .MuiInputBase-root:before": {
-                        borderBottomColor: "#FFF", 
-                      },
-                      "& .MuiInputBase-root:hover:not(.Mui-disabled):before": {
-                        borderBottomColor: "#FFF",
-                      },
-                      "& .MuiInputBase-root:after": {
-                        borderBottomColor: "#FFF", 
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "#000",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "#005B50",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "#005B50",
+                        },
                       },
                     }}
                   >
-                    <MenuItem value="male">Мужской</MenuItem>
-                    <MenuItem value="female">Женский</MenuItem>
+                    <MenuItem value="male">Мужчина</MenuItem>
+                    <MenuItem value="female">Женщина</MenuItem>
                   </Select>
                 </FormControl>
               </div>
-
-              {isFormComplete && (
-                <div className={styles.PersonalInfoForm__btn}>
-                  <Button
-                    type="button"
-                    variant="outlined"
-                    sx={{
-                      backgroundColor: "#4CAF50",
-                      borderRadius: "20px",
-                      marginTop: "32px",
-                      color: "#FFF",
-                      padding: "10px 60px",
-                      fontWeight: "bold",
-                      fontSize: "16px",
-                      "&:hover": {
-                        background: "linear-gradient(45deg, #32C1CD, #3A8DFF)",
-                        boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
-                      },
-                      "&:disabled": {
-                        background: "#A0A0A0",
-                        color: "#FFF",
-                      },
-                    }}
-                    onClick={onNext}
-                  >
-                    Далее
-                  </Button>
-                </div>
-              )}
+              <div style={{ marginTop: "16px" }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleNext}
+                  disabled={!isFormComplete}
+                  sx={{
+                    backgroundColor: "#009999",
+                    "&:hover": {
+                      backgroundColor: "#007b7b",
+                    },
+                  }}
+                >
+                  Далее
+                </Button>
+              </div>
             </form>
           </div>
         </div>
