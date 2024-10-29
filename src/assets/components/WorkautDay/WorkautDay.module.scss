@@ -1,0 +1,24 @@
+@import "../../helpers/variables.scss";
+
+.WorkautDay {
+  &__content {
+    h2 {
+      margin: 0;
+      font-size: 43px;
+      line-height: 32px;
+      text-align: center;
+      font-family: Graphik, sans-serif;
+      font-weight: 600;
+      color: #1f1f1f;
+      padding: 20px 0 40px;
+    }
+  }
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  &__lose {
+    width: 400px;
+  }
+}

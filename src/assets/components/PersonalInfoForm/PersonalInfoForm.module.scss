@@ -2,28 +2,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; // или row, если необходимо
+  flex-direction: column; 
 
   &__progress{
     width: 30%;
     margin-top: 30px;
   }
+  &__fields{
+    background: #fff;
+    padding: 60px 60px 40px ;
+    border-radius: 32px;
+    box-shadow: 0 14px 28px rgba(6, 4, 4, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
   &__content {
-    max-width: 600px;
+    max-width: 700px;
     display: grid;
     justify-content: center;
+
     h2 {
-      color: #fff;
+      margin: 0;
+      font-size: 37px;
+      line-height: 32px;
       text-align: center;
-      padding: 10px 0 30px;
-      font-size: 39px;
+      font-family: Graphik, sans-serif;
+      font-weight: 600;
+      padding: 20px 0 30px;
+      color: #1F1F1F;
+
     }
   }
   &__number {
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 150px;
+    column-gap: 50px;
   }
   &__gender {
     margin-top: 20px;

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -10,11 +10,25 @@ import lose from "@assets/image/TrainingIntensityCard/lose.webp";
 import maintain from "@assets/image/TrainingIntensityCard/maintain.avif";
 import styles from "@assets/components/TrainingIntensityCard/TrainingIntensityCard.module.scss";
 
-export default function TrainingIntensityCard() {
-  const [selectedGoal, setSelectedGoal] = React.useState(null);
+export default function TrainingIntensityCard({
+  onNext,
+  onProgressChange,
+  setGoal,
+}) {
+  const [selectedGoal, setSelectedGoal] = useState("");
 
-  const handleSelectGoal = (goal) => {
+  const handleGoalSelection = (goal) => {
     setSelectedGoal(goal);
+    setGoal(goal);
+  };
+
+  const handleNext = () => {
+    if (selectedGoal) {
+      onProgressChange(100);
+      onNext();
+    } else {
+      alert("Пожалуйста, выберите цель.");
+    }
   };
 
   return (
@@ -26,19 +40,36 @@ export default function TrainingIntensityCard() {
             <Card
               sx={{
                 maxWidth: 345,
-                borderRadius: "17px",
-                padding: "10px 10px",
+                padding: "15px 15px",
+                borderRadius: "32px",
                 border: selectedGoal === "lose" ? "2px solid #4CAF50" : "none",
+                transform: "scale(1)",
+                transition: "transform 0.3s ease-in-out",
                 boxShadow:
-                  selectedGoal === "lose"
-                    ? "0px 0px 10px rgba(76, 175, 80, 0.5)"
-                    : "none",
+                  " 0 14px 28px rgba(6, 4, 4, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",
+
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
               }}
             >
-              <Typography gutterBottom variant="h5" component="div">
-                2
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{
+                  fontWeight: "500",
+                  fontFamily: "Graphik, sans-serif",
+                  fontSize: "27px",
+                }}
+              >
+                Похудеть
               </Typography>
-              <CardActionArea onClick={() => handleSelectGoal("lose")}>
+              <CardActionArea
+                onClick={() => handleGoalSelection("lose_weight")}
+              >
+   
+
                 <CardMedia
                   component="img"
                   height="240"
@@ -49,9 +80,14 @@ export default function TrainingIntensityCard() {
                 <CardContent>
                   <Typography
                     variant="body2"
-                    sx={{ color: "text.secondary", fontSize: "16px" }}
+                    sx={{
+                      color: "text.secondary",
+                      fontSize: "17px",
+                      fontWeight: "500",
+                    }}
                   >
-                    Подберем оптимальные тренировки для двух дней
+                    Программа для тех, кто хочет снизить вес и повысить свою
+                    выносливость.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -59,7 +95,22 @@ export default function TrainingIntensityCard() {
                 <Button
                   size="small"
                   color="primary"
-                  onClick={() => handleSelectGoal("lose")}
+                  onClick={handleNext}
+                  sx={{
+                    background: "#009999",
+                    borderRadius: "20px",
+                    color: "#FFF",
+                    padding: "10px 50px",
+                    fontWeight: "bold",
+                    fontSize: "16px",
+                    "&:hover": {
+                      boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+                    },
+                    "&:disabled": {
+                      background: "#A0A0A0",
+                      color: "#FFF",
+                    },
+                  }}
                 >
                   Выбрать
                 </Button>
@@ -69,19 +120,33 @@ export default function TrainingIntensityCard() {
             <Card
               sx={{
                 maxWidth: 345,
-                borderRadius: "17px",
-                padding: "10px 10px",
-                border: selectedGoal === "gain" ? "2px solid #4CAF50" : "none", // Фокус на выбранной карточке
+                padding: "15px 15px",
+                borderRadius: "32px",
+                border: selectedGoal === "gain" ? "2px solid #4CAF50" : "none",
+                transform: "scale(1)",
+                transition: "transform 0.3s ease-in-out",
                 boxShadow:
-                  selectedGoal === "gain"
-                    ? "0px 0px 10px rgba(76, 175, 80, 0.5)"
-                    : "none",
+                  " 0 14px 28px rgba(6, 4, 4, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)",
+
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
               }}
             >
-              <Typography gutterBottom variant="h5" component="div">
-                3
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{
+                  fontWeight: "500",
+                  fontFamily: "Graphik, sans-serif",
+                  fontSize: "27px",
+                }}
+              >
+                Массанабор
               </Typography>
-              <CardActionArea onClick={() => handleSelectGoal("gain")}>
+              <CardActionArea onClick={() => handleGoalSelection("gain_weight")}>
+
                 <CardMedia
                   component="img"
                   height="240"
@@ -92,9 +157,14 @@ export default function TrainingIntensityCard() {
                 <CardContent>
                   <Typography
                     variant="body2"
-                    sx={{ color: "text.secondary", fontSize: "16px" }}
+                    sx={{
+                      color: "text.secondary",
+                      fontSize: "17px",
+                      fontWeight: "500",
+                    }}
                   >
-                    Подберем оптимальные тренировки для трех дней
+                    Увеличьте мышечную массу с продуманной программой тренировок
+                    и питания.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -102,7 +172,22 @@ export default function TrainingIntensityCard() {
                 <Button
                   size="small"
                   color="primary"
-                  onClick={() => handleSelectGoal("gain")}
+                  onClick={handleNext}
+                  sx={{
+                    background: "#009999",
+                    borderRadius: "20px",
+                    color: "#FFF",
+                    padding: "10px 50px",
+                    fontWeight: "bold",
+                    fontSize: "16px",
+                    "&:hover": {
+                      boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+                    },
+                    "&:disabled": {
+                      background: "#A0A0A0",
+                      color: "#FFF",
+                    },
+                  }}
                 >
                   Выбрать
                 </Button>

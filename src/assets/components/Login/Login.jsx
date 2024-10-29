@@ -168,31 +168,35 @@ const Login = () => {
                   },
                 }}
               />
-
-              <Button
-                type="submit"
-                variant="outlined"
-                sx={{
-                  background: "#009999",
-                  borderRadius: "20px",
-                  marginTop: "32px",
-                  color: "#FFF",
-                  padding: "10px 60px",
-                  marginLeft: "90px",
-                  fontWeight: "bold",
-                  fontSize: "16px",
-                  "&:hover": {
-                    boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
-                  },
-                  "&:disabled": {
-                    background: "#A0A0A0",
-                    color: "#FFF",
-                  },
-                }}
-                disabled={!isFormValid}
+              <div
+                className={styles.Login__btn}
+                style={{ display: "flex", justifyContent: "center" }}
               >
-                Перейти к тестам
-              </Button>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  sx={{
+                    background: "#009999",
+                    borderRadius: "20px",
+                    marginTop: "32px",
+                    color: "#FFF",
+                    padding: "10px 60px",
+                    fontWeight: "bold",
+
+                    fontSize: "16px",
+                    "&:hover": {
+                      boxShadow: "0 3px 6px rgba(0, 0, 0, 0.1)",
+                    },
+                    "&:disabled": {
+                      background: "#A0A0A0",
+                      color: "#FFF",
+                    },
+                  }}
+                  disabled={!isFormValid}
+                >
+                  Перейти к тестам
+                </Button>
+              </div>
             </form>
             <Snackbar
               open={openSnackbar}
