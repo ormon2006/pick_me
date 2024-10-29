@@ -1,12 +1,19 @@
+@import "../../helpers/variables.scss";
+
 .Header {
+  &__bodybackground{
+    background-image: url(../../assets/image/background.png);
+    background-position: center;
+    position: relative;
+  }
   &__container{
     display: block;
     align-items: center;
     justify-content: space-between;
-    background: #6F635B;
-    padding: 10px 0px 10px 10px;
+    background: $bg;
+    padding: 10px 0px 10px 70px;
     margin: 0;
-  }
+  } 
   &__flex {
     display: flex;
     align-items: center;
@@ -19,17 +26,12 @@
     column-gap: 40px;
     font-size: 18px;
     font-weight: 1200;
-    
   }
-  &__logo h2 {
+  &__logo
+        h2 {
     font-size: 38px;
-    color: #000000;
-
-    span {
-      color: rgb(207, 207, 207);
-    }
+    color: #009999;
+    padding: 0;
   }
-
-
 }
 

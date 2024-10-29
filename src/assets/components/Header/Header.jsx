@@ -9,7 +9,7 @@ const Header = () => {
           <div className={styles.Header__flex}>
             <div className={styles.Header__logo}>
               <h2>
-                <span>Athlete</span>Xpert.Ai
+                AthleteXpert.Ai
               </h2>
             </div>
             <div className={styles.Header__nav}>

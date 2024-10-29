@@ -1,0 +1,46 @@
+@import "../../helpers/variables.scss";
+
+
+.ProcessGuideCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f5f5f5;
+    
+    &__title{
+        color: black;
+        text-align: center;
+        padding: 60px;
+        h2{       
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        padding: 20px;
+        }
+    }
+    &__cardsContainer{
+      color: black;
+      display: flex;
+      justify-content: center;
+      gap: 20p x;
+      background-color: white; 
+      border: 1px solid #e0e0e0; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      overflow: hidden; 
+      cursor: pointer;
+    }
+    &__btn{
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer
+    }
+}
+
