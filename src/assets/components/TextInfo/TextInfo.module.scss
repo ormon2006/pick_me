@@ -13,14 +13,12 @@
   &__text {
     text-align: start;
     position: absolute; 
-    top: 40%; /* Центрирует текст по вертикали */
-    left: 40%; /* Центрирует текст по горизонтали */
-    transform: translate(-50%, -50%); /* Для точного центрирования текста */
+    top: 40%;
+    left: 40%; 
+    transform: translate(-50%, -50%); 
     text-align: left; 
-
-    color: white; /* Цвет текста, чтобы он был виден на фоне */
+    color: white;
     z-index: 1; 
-
   }
   &__typing {
     color: black;
@@ -36,7 +34,7 @@
   &__image {
     width: 100%;
     height: auto;
-    // display: block;
+    display: block;
   }
 &__btn {
   padding: 0 4px 210px 0;

@@ -6,12 +6,15 @@
     flex-direction: column;
     align-items: center;
     padding: 40px;
-    background-color: #f5f5f5;
-    
+    background-color: $bg;
+
     &__title{
         color: black;
         text-align: center;
         padding: 60px;
+        font-size: 50px;
+        font-weight: bold;
+
         h2{       
         text-align: center;
         font-size: 24px;
@@ -21,26 +24,37 @@
         }
     }
     &__cardsContainer{
-      color: black;
-      display: flex;
-      justify-content: center;
-      gap: 20p x;
-      background-color: white; 
-      border: 1px solid #e0e0e0; 
-      border-radius: 8px; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-      overflow: hidden; 
-      cursor: pointer;
+        color: black;
+        display: flex;
+        justify-content: center;
+        gap: 104px;
+        flex-wrap: wrap;
+        padding: 0 0 111px;
+    }
+    &__card{
+        align-items: center;
+        background-color: white; 
+        border: 1px solid #e0e0e0; 
+        border-radius: 8px; 
+        box-shadow: 0 14px 28px rgba(6, 4, 4, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); 
+        height: 362px;
+        width: 290px;
+        overflow: hidden; 
+        cursor: pointer;
+        padding: 20px;   
     }
     &__btn{
+        font-size: 40px;
+        font-weight: bold;
         margin-top: 20px;
         padding: 10px 20px;
-        font-size: 18px;
         color: #fff;
-        background-color: #007bff;
+        background-color: #009999;
         border: none;
         border-radius: 5px;
-        cursor: pointer
+        width: 412px;
+        height: 80px;
+        box-shadow: 0 14px 28px rgba(6, 4, 4, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); 
     }
 }
 

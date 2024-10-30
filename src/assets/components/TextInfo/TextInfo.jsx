@@ -29,7 +29,7 @@ const TextInfo = () => {
              variant="outlined"
              sx={{
               borderRadius: "5px",
-              // marginLeft: "70px",
+
               backgroundColor: "#009999",
               color: "white",
             }}
